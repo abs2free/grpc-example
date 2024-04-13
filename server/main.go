@@ -7,7 +7,10 @@ import (
 
 	"github.com/abs2free/grpc-example/pb"
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/codes"
+	"google.golang.org/grpc/metadata"
 	"google.golang.org/grpc/reflection"
+	"google.golang.org/grpc/status"
 )
 
 // server
@@ -17,6 +20,13 @@ type server struct {
 }
 
 func (s *server) SayHello(ctx context.Context, in *pb.HelloRequest) (*pb.HelloReply, error) {
+	md, ok := metadata.FromIncomingContext(ctx)
+	if !ok {
+		return nil, status.Errorf(codes.DataLoss, "SayHello : failled to get metadata")
+	}
+
+	fmt.Printf("metadata:%v\n", md)
+
 	fmt.Println("get message from:", in.Name)
 	return &pb.HelloReply{Message: "Hello " + in.Name}, nil
 }

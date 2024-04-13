@@ -8,6 +8,7 @@ import (
 
 	"github.com/abs2free/grpc-example/pb"
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/metadata"
 )
 
 // hello_client
@@ -34,6 +35,13 @@ func main() {
 	// Contact the server and print out its response.
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
 	defer cancel()
+
+	md := map[string]string{
+		"token":      "app-secret-qx",
+		"request_id": "123456",
+	}
+	ctx = metadata.NewOutgoingContext(ctx, metadata.New(md))
+
 	r, err := c.SayHello(ctx, &pb.HelloRequest{Name: *name})
 	if err != nil {
 		log.Fatalf("could not greet: %v", err)
