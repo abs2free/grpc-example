@@ -1,0 +1,19 @@
+{
+    "name": "grpc-example/php",
+    "autoload": {
+        "psr-4": {
+            "Pb\\": "Pb/",
+            "GPBMetadata\\": "GPBMetadata/"
+        }
+    },
+    "authors": [
+        {
+            "name": "wscrlhs",
+            "email": "wscrlhs@gmail.com"
+        }
+    ],
+    "require": {
+        "google/protobuf": "~v3.12.2",
+        "grpc/grpc": "^1.52"
+    }
+}

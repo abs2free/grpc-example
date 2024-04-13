@@ -1,0 +1,41 @@
+<?php return array(
+    'root' => array(
+        'name' => 'grpc-example/php',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => '4a3e9cc233d19071daac9aa38f2959c866caaabc',
+        'type' => 'library',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'dev' => true,
+    ),
+    'versions' => array(
+        'google/protobuf' => array(
+            'pretty_version' => 'v3.12.4',
+            'version' => '3.12.4.0',
+            'reference' => 'e8316b6aaf62a4dc506b8f88a88e506280c8538d',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../google/protobuf',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'grpc-example/php' => array(
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '4a3e9cc233d19071daac9aa38f2959c866caaabc',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'grpc/grpc' => array(
+            'pretty_version' => '1.57.0',
+            'version' => '1.57.0.0',
+            'reference' => 'b610c42022ed3a22f831439cb93802f2a4502fdf',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../grpc/grpc',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+    ),
+);
